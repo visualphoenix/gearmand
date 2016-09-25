@@ -3,12 +3,11 @@
 package redisq
 
 import (
-	. "github.com/ngaut/gearmand/common"
-	//"github.com/ngaut/gearmand/storage"
 	"encoding/json"
 	"flag"
-	log "github.com/ngaut/logging"
-	redis "github.com/vmihailenco/redis/v2"
+	log "github.com/Sirupsen/logrus"
+	. "github.com/visualphoenix/gearmand/common"
+	redis "gopkg.in/redis.v4"
 )
 
 type RedisQ struct {
@@ -18,7 +17,7 @@ type RedisQ struct {
 func (self *RedisQ) Init() error {
 	log.Debug("init redis queue")
 	addr := flag.Lookup("redis").Value.(flag.Getter).Get().(string)
-	self.client = redis.NewTCPClient(&redis.Options{
+	self.client = redis.NewClient(&redis.Options{
 		Addr:     addr,
 		Password: "", // no password set
 		DB:       0,  // use default DB
@@ -35,7 +34,7 @@ func (self *RedisQ) AddJob(j *Job) error {
 		return err
 	}
 
-	_, err = self.client.Set(j.Handle, string(buf)).Result()
+	_, err = self.client.Set(j.Handle, string(buf), 0).Result()
 
 	return err
 }

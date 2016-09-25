@@ -1,0 +1,47 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+branches:
+  only:
+    - develop
+    - master
+    - /^\d+\.\d+\.\d+([a-z0-9\-\+])*/
+
+env:
+  - GIT_TAG=$(git describe --always)
+
+before_install:
+  - docker -v
+  - echo "$TRAVIS_BRANCH"
+
+script:
+  - |
+    set -e
+    make clean build
+    docker images
+    if [ "$TRAVIS_SECURE_ENV_VARS" = "true" ]; then
+      docker tag $IMAGE_NAME $DOCKER_USERNAME/$IMAGE_NAME:$GIT_TAG
+      if [ "$TRAVIS_BRANCH" = "master" ] ; then
+        docker tag $DOCKER_USERNAME/$IMAGE_NAME:$GIT_TAG $DOCKER_USERNAME/$IMAGE_NAME:latest
+      elif [ "$TRAVIS_BRANCH" = "develop" ] ; then
+        docker tag $DOCKER_USERNAME/$IMAGE_NAME:$GIT_TAG $DOCKER_USERNAME/$IMAGE_NAME:develop
+      fi
+      docker images
+    fi
+
+after_success:
+  - |
+    set -e
+    if [ "$TRAVIS_SECURE_ENV_VARS" = "true" -a  "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      if [ "$TRAVIS_BRANCH" = "master" ] ; then
+        docker push $DOCKER_USERNAME/$IMAGE_NAME:$GIT_TAG
+        docker push $DOCKER_USERNAME/$IMAGE_NAME:latest
+      elif [ "$TRAVIS_BRANCH" = "develop" ] ; then
+        docker push $DOCKER_USERNAME/$IMAGE_NAME:develop
+      fi
+    fi

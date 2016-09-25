@@ -3,10 +3,10 @@ package server
 import (
 	"container/list"
 	"encoding/json"
-	. "github.com/ngaut/gearmand/common"
-	"github.com/ngaut/gearmand/storage"
-	log "github.com/ngaut/logging"
+	log "github.com/Sirupsen/logrus"
 	"github.com/ngaut/stats"
+	. "github.com/visualphoenix/gearmand/common"
+	"github.com/visualphoenix/gearmand/storage"
 	"net"
 	"strconv"
 	"sync/atomic"

@@ -1,7 +1,7 @@
 package storage
 
 import (
-	. "github.com/ngaut/gearmand/common"
+	. "github.com/visualphoenix/gearmand/common"
 )
 
 type JobQueue interface {

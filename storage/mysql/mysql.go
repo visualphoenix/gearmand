@@ -3,9 +3,9 @@ package mysql
 import (
 	"database/sql"
 	"errors"
+	log "github.com/Sirupsen/logrus"
 	_ "github.com/go-sql-driver/mysql"
-	. "github.com/ngaut/gearmand/common"
-	log "github.com/ngaut/logging"
+	. "github.com/visualphoenix/gearmand/common"
 )
 
 const (

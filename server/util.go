@@ -6,15 +6,15 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"github.com/ngaut/gearmand/common"
-	log "github.com/ngaut/logging"
-	"github.com/ngaut/stats"
 	"io"
 	"net"
 	"os"
 	"strconv"
 	"strings"
 	//"syscall"
+	log "github.com/Sirupsen/logrus"
+	"github.com/ngaut/stats"
+	"github.com/visualphoenix/gearmand/common"
 	"time"
 )
 

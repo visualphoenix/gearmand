@@ -1,0 +1,91 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "2avCvSn0XonfApKKuTMyiQmk7s0=",
+			"path": "github.com/Sirupsen/logrus",
+			"revision": "3ec0642a7fb6488f65b06f9040adc67e3990296a",
+			"revisionTime": "2016-08-29T20:23:21Z"
+		},
+		{
+			"checksumSHA1": "fcfxNsCuheCrubAAl6zWgimCnLY=",
+			"path": "github.com/codegangsta/inject",
+			"revision": "33e0aa1cb7c019ccc3fbe049a8262a6403d30504",
+			"revisionTime": "2015-01-14T23:56:00Z"
+		},
+		{
+			"checksumSHA1": "yQqYQc9nHrkGNNEdQ0bcwb1qe3o=",
+			"path": "github.com/go-martini/martini",
+			"revision": "fe605b5cd210047ae3bb73d2b69a5b912a9b423d",
+			"revisionTime": "2016-09-08T07:09:01Z"
+		},
+		{
+			"checksumSHA1": "jEXpLrWXoQvH/zk1lW5Si0swr6Y=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "0b58b37b664c21f3010e836f1b931e1d0b0b0685",
+			"revisionTime": "2016-08-02T11:38:42Z"
+		},
+		{
+			"checksumSHA1": "ToGxRLachRwa1HbVy7ZBdJaq5Zc=",
+			"path": "github.com/mattn/go-sqlite3",
+			"revision": "3fb7a0e792edd47bf0cf1e919dfc14e2be412e15",
+			"revisionTime": "2016-09-07T16:20:43Z"
+		},
+		{
+			"checksumSHA1": "6kW/4utnQ3hlPyp9fAHSTKd0bZM=",
+			"path": "github.com/ngaut/stats",
+			"revision": "8564f986a400931e52c2261e4b784d812c854537",
+			"revisionTime": "2014-05-15T08:26:19Z"
+		},
+		{
+			"checksumSHA1": "+4r0PnLwwyhO5/jvU5R/TEJb4kA=",
+			"path": "gopkg.in/bsm/ratelimit.v1",
+			"revision": "db14e161995a5177acef654cb0dd785e8ee8bc22",
+			"revisionTime": "2016-02-20T15:49:07Z"
+		},
+		{
+			"checksumSHA1": "7+c2v1+GKrNRE/R80YGdineJoTg=",
+			"path": "gopkg.in/redis.v4",
+			"revision": "938235994ea88a05678f8060741d5f34ed6a5ff3",
+			"revisionTime": "2016-09-14T11:04:51Z"
+		},
+		{
+			"checksumSHA1": "4HbfnrL1KOz/6nsdBAPeL0oUXzc=",
+			"path": "gopkg.in/redis.v4/internal",
+			"revision": "938235994ea88a05678f8060741d5f34ed6a5ff3",
+			"revisionTime": "2016-09-14T11:04:51Z"
+		},
+		{
+			"checksumSHA1": "l+1jiOGUyjHP0u0mB+KiT/UHVcY=",
+			"path": "gopkg.in/redis.v4/internal/consistenthash",
+			"revision": "938235994ea88a05678f8060741d5f34ed6a5ff3",
+			"revisionTime": "2016-09-14T11:04:51Z"
+		},
+		{
+			"checksumSHA1": "XxoAGEMN5ZCJJ3FeDMSTVhvscHg=",
+			"path": "gopkg.in/redis.v4/internal/errors",
+			"revision": "938235994ea88a05678f8060741d5f34ed6a5ff3",
+			"revisionTime": "2016-09-14T11:04:51Z"
+		},
+		{
+			"checksumSHA1": "6XSNzBg5bzd2TjEfC/q41tPT/Zg=",
+			"path": "gopkg.in/redis.v4/internal/hashtag",
+			"revision": "938235994ea88a05678f8060741d5f34ed6a5ff3",
+			"revisionTime": "2016-09-14T11:04:51Z"
+		},
+		{
+			"checksumSHA1": "IkFE1dbi3dcJ1yMWrwfYtEMO3Zc=",
+			"path": "gopkg.in/redis.v4/internal/pool",
+			"revision": "938235994ea88a05678f8060741d5f34ed6a5ff3",
+			"revisionTime": "2016-09-14T11:04:51Z"
+		},
+		{
+			"checksumSHA1": "BGzuM8ZpMCmTKWnb/3CtrV4OwDU=",
+			"path": "gopkg.in/redis.v4/internal/proto",
+			"revision": "938235994ea88a05678f8060741d5f34ed6a5ff3",
+			"revisionTime": "2016-09-14T11:04:51Z"
+		}
+	],
+	"rootPath": "github.com/visualphoenix/gearmand"
+}

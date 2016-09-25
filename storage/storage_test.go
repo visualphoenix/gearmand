@@ -3,15 +3,15 @@ package storage
 import (
 	"database/sql"
 	"flag"
-	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"sync"
 	"testing"
 	"time"
 
-	. "github.com/ngaut/gearmand/common"
-	. "github.com/ngaut/gearmand/storage/mysql"
-	. "github.com/ngaut/gearmand/storage/redisq"
+	_ "github.com/go-sql-driver/mysql"
+	. "github.com/visualphoenix/gearmand/common"
+	. "github.com/visualphoenix/gearmand/storage/mysql"
+	. "github.com/visualphoenix/gearmand/storage/redisq"
 )
 
 const (

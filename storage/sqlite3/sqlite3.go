@@ -3,9 +3,9 @@ package sqlite3
 import (
 	"database/sql"
 	"errors"
+	log "github.com/Sirupsen/logrus"
 	_ "github.com/mattn/go-sqlite3"
-	. "github.com/ngaut/gearmand/common"
-	log "github.com/ngaut/logging"
+	. "github.com/visualphoenix/gearmand/common"
 )
 
 const (

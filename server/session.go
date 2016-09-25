@@ -2,8 +2,8 @@ package server
 
 import (
 	"bufio"
-	. "github.com/ngaut/gearmand/common"
-	log "github.com/ngaut/logging"
+	log "github.com/Sirupsen/logrus"
+	. "github.com/visualphoenix/gearmand/common"
 	"net"
 	"time"
 )

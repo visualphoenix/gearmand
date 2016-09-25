@@ -2,33 +2,31 @@ package main
 
 import (
 	"flag"
-	"fmt"
-	gearmand "github.com/ngaut/gearmand/server"
-	"github.com/ngaut/gearmand/storage/mysql"
-	"github.com/ngaut/gearmand/storage/redisq"
-	"github.com/ngaut/gearmand/storage/sqlite3"
-	log "github.com/ngaut/logging"
+	log "github.com/Sirupsen/logrus"
+	gearmand "github.com/visualphoenix/gearmand/server"
+	"github.com/visualphoenix/gearmand/storage/mysql"
+	"github.com/visualphoenix/gearmand/storage/redisq"
+	"github.com/visualphoenix/gearmand/storage/sqlite3"
 	"runtime"
-	"strconv"
 )
 
 var (
-	addr  = flag.String("addr", ":4730", "listening on, such as 0.0.0.0:4730")
-	path  = flag.String("coredump", "./", "coredump file path")
-	redis = flag.String("redis", "localhost:6379", "redis address")
+	addr    = flag.String("addr", ":4730", "listening on, such as 0.0.0.0:4730")
+	path    = flag.String("coredump", "./", "coredump file path")
+	redis   = flag.String("redis", "localhost:6379", "redis address")
+	verbose = flag.Bool("verbose", false, "Enables output of line numbers in the log.")
 	//todo: read from config files
 	mysqlSource   = flag.String("mysql", "user:password@tcp(localhost:3306)/gogearmand?parseTime=true", "mysql source")
 	sqlite3Source = flag.String("sqlite3", "gearmand.db", "sqlite3 source")
-	storage       = flag.String("storage", "mysql", "choose storage(redis or mysql, sqlite3)")
+	storage       = flag.String("storage", "sqlite3", "choose storage(redis or mysql, sqlite3)")
 )
 
 func main() {
-	flag.Lookup("v").DefValue = fmt.Sprint(log.LOG_LEVEL_WARN)
 	flag.Parse()
 	gearmand.PublishCmdline()
 	gearmand.RegisterCoreDump(*path)
-	if lv, err := strconv.Atoi(flag.Lookup("v").Value.String()); err == nil {
-		log.SetLevel(log.LogLevel(lv))
+	if *verbose {
+		log.SetLevel(log.WarnLevel)
 	}
 	//log.SetHighlighting(false)
 	runtime.GOMAXPROCS(1)

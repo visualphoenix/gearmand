@@ -1,8 +1,8 @@
 package server
 
 import (
+	log "github.com/Sirupsen/logrus"
 	"github.com/go-martini/martini"
-	log "github.com/ngaut/logging"
 	"github.com/ngaut/stats"
 	"net/http"
 	"net/http/pprof"

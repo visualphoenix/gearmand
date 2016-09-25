@@ -2,7 +2,7 @@ package server
 
 import (
 	"bytes"
-	. "github.com/ngaut/gearmand/common"
+	. "github.com/visualphoenix/gearmand/common"
 	"testing"
 )
 

@@ -3,7 +3,7 @@ package server
 import (
 	"bytes"
 	"encoding/json"
-	. "github.com/ngaut/gearmand/common"
+	. "github.com/visualphoenix/gearmand/common"
 	"net"
 )
 
